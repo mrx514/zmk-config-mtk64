@@ -1,6 +1,5 @@
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include "keycode_japanese.h"
@@ -83,6 +82,26 @@
             bindings = <&kp QMARK>;
             key-positions = <47 48>;
         };
+
+        kakko {
+            bindings = <&kp LS(N8)>;
+            key-positions = <18 19>;
+        };
+
+        rkakko {
+            bindings = <&kp LS(N9)>;
+            key-positions = <19 20>;
+        };
+
+        lsumitukikakko {
+            bindings = <&kp LS(RIGHT_BRACKET)>;
+            key-positions = <44 45>;
+        };
+
+        rsumitukikakko {
+            bindings = <&kp LS(NON_US_BACKSLASH)>;
+            key-positions = <45 46>;
+        };
     };
 
     keymap {
@@ -91,7 +110,7 @@
         default_layer {
             display-name = "DEF";
             bindings = <
-&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp LG(LS(S))  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp HOME  &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &lt 3 L  &kp MINUS  &kp END  &kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp DEL  &kp EXCL  &kp N  &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH  &kp RIGHT_SHIFT  &kp LALT  &kp LGUI  &lt 2 SPACE  &mt LEFT_CONTROL LANG2  &kp BSPC  &kp ENTER  &kp UNDER  &kp BSLH  &tog 2  &kp ENTER  &lt 3 LANG1  &lt 1 ENTER  &kp ENTER  &tog 2  &kp LC(C)  &kp LC(V)  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp HOME  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp END  &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &lt 3 L  &kp MINUS  &kp LEFT_BRACKET  &kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp DEL  &kp EXCL  &kp N  &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH  &kp RIGHT_SHIFT  &kp LALT  &kp LGUI  &lt 1 SPACE  &mt LEFT_CONTROL LANG2  &kp BSPC  &lt 1 ENTER  &kp UNDER  &kp BSLH  &trans  &trans  &mt LEFT_ALT LANG1  &mt RIGHT_SHIFT LANG_KATAKANA  &trans  &trans  &kp LC(C)  &kp LC(V)  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3
             >;
 
             sensor-bindings = <
@@ -103,8 +122,12 @@
         layer_1 {
             display-name = "SNP";
             bindings = <
-&trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &studio_unlock  &trans  &kp MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &scrl_inv_tog  &trans  &kp SLASH  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &aml_tog  &trans  &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &cpi_inc  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &cpi_dec  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &studio_unlock  &trans  &kp EXCL  &kp AT  &kp UP_ARROW  &kp KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &trans  &trans  &kp SLASH  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp (LA(LC(TAB))) LA(LC(LS(TAB)))>,
+                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         layer_2 {
@@ -131,7 +154,7 @@
             >;
         };
 
-        layer_4 {
+        layer_4unuse {
             display-name = "L4";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
